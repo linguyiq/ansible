@@ -1,2 +1,3 @@
-# ansible
-Ansible Playbooks.
+ansible
+
+check ansible-ctrl.lan host
