@@ -1,0 +1,14 @@
+---
+- name: Get-URL Download the Protected File
+  hosts: localhost
+  tasks:
+    - name: Access the URL and download the file
+      get_url:
+        url: https://filesamples.com/samples/document/txt/sample2.txt
+        dest: /tmp/sample2.txt
+    - name: Display the File contents
+      shell: >
+         cat /tmp/sample2.txt
+      register: shellout
+    - name: "INFO: Display the File Contents"
+      debug: var=shellout.stdout_lines
