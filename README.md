@@ -1,3 +1,3 @@
 ansible
 
-check ansible-ctrl.lan host
+# check ansible-ctrl.lan host
