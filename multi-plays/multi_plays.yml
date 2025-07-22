@@ -1,22 +1,24 @@
 ---
-- name: check date play
+- name: Check date play
   hosts: ubuntu
-  gather_facts: False
+  gather_facts: false
   tasks:
-    - name: check date
-      command: date
+    - name: Check date
+      ansible.builtin.command: date
       register: sys_date
-    - name: show date
-      debug:
-        msg: "System date : {{sys_date.stdout_lines}}"
+      changed_when: false
+    - name: Show date
+      ansible.builtin.debug:
+        msg: "System date: {{ sys_date.stdout_lines }}"
 
-- name: check uptime play
+- name: Check uptime play
   hosts: ubuntu
-  gather_facts: False
+  gather_facts: false
   tasks:
-    - name: check uptime
-      command: uptime
+    - name: Check uptime
+      ansible.builtin.command: uptime
       register: sys_uptime
-    - name: show uptime
-      debug:
-        msg: "System uptime : {{sys_uptime.stdout_lines}}"
+      changed_when: false
+    - name: Show uptime
+      ansible.builtin.debug:
+        msg: "System uptime: {{ sys_uptime.stdout_lines }}"
