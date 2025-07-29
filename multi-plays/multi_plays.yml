@@ -7,6 +7,7 @@
       ansible.builtin.command: date
       register: sys_date
       changed_when: false
+
     - name: Show date
       ansible.builtin.debug:
         msg: "System date: {{ sys_date.stdout_lines }}"
@@ -19,6 +20,7 @@
       ansible.builtin.command: uptime
       register: sys_uptime
       changed_when: false
+
     - name: Show uptime
       ansible.builtin.debug:
         msg: "System uptime: {{ sys_uptime.stdout_lines }}"

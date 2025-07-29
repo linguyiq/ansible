@@ -1,14 +1,17 @@
 ---
-- name: Get-URL Download the Protected File
+- name: Get-URL download the protected file
   hosts: localhost
   tasks:
-    - name: Access the URL and download the file
-      get_url:
+    - name: Download the file
+      ansible.builtin.get_url:
         url: https://filesamples.com/samples/document/txt/sample2.txt
         dest: /tmp/sample2.txt
-    - name: Display the File contents
-      shell: >
+
+    - name: Display the file contents
+      ansible.builtin.shell: >
          cat /tmp/sample2.txt
       register: shellout
-    - name: "INFO: Display the File Contents"
-      debug: var=shellout.stdout_lines
+
+    - name: Show file stdout output
+      ansible.builtin.debug: 
+        var: shellout.stdout_lines
