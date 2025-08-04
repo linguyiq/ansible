@@ -1,2 +1,8 @@
+# Ansible .gitignore file
+
+# vs code settings
+.vscode/*
+
+# private projects
 local-systems/*
 playground/*
